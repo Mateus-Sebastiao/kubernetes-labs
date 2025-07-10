@@ -53,6 +53,7 @@ O modo RBAC pode criar dois tipos de `Roles`:
 1. Role
 2. ClusterRole
 
+
 Ficheiro de exemplo do tipo [Role](./authorization/RBAC/type_role.yaml)
 Ficheiro de exemplo do tipo [ClusterRole](./authorization/RBAC/type_rolebinding.yaml)
 
@@ -62,4 +63,5 @@ Assim que o `Role` está criado, podemos ligar para usuários com o `RoleBinding
 2. ClusterRoleBinding
 
 Ficheiro de exemplo do tipo [RoleBinding](./authorization/RBAC/type_rolebinding.yaml)
+
 Ficheiro de exemplo do tipo [ClusterRoleBinding](./authorization/RBAC/type_clusterrolebinding.yaml)
