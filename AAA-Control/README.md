@@ -65,3 +65,8 @@ Assim que o `Role` está criado, podemos ligar para usuários com o `RoleBinding
 Ficheiro de exemplo do tipo [RoleBinding](./authorization/RBAC/type_rolebinding.yaml)
 
 Ficheiro de exemplo do tipo [ClusterRoleBinding](./authorization/RBAC/type_clusterrolebinding.yaml)
+
+## Admissão
+
+[Admission Controller](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/)
+
