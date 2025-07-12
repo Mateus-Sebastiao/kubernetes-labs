@@ -1,0 +1,61 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    test: liveness
+  name: liveness-exec
+spec:
+  containers:
+  - name: liveness
+    image: k8s.gcr.io/busybox
+    args:
+    - /bin/sh
+    - -c
+    - touch /tmp/healthy; sleep 30; rm -rf /tmp/healthy; sleep 600
+    livenessProbe:
+      exec:
+        command:
+        - cat
+        - /tmp/healthy
+      initialDelaySeconds: 15
+      failureThreshold: 1
+      periodSeconds: 5
+
+# ================================================================
+# Liveness HTTP Request
+# ================================================================
+
+# ...
+#     livenessProbe:
+#       httpGet:
+#         path: /healthz
+#         port: 8080
+#         httpHeaders:
+#         - name: X-Custom-Header
+#           value: Awesome
+#       initialDelaySeconds: 15
+#       periodSeconds: 5
+# ...
+
+# ================================================================
+# TCP Liveness Probe
+# ================================================================
+
+# ...
+#    livenessProbe:
+#      tcpSocket:
+#        port: 8080
+#      initialDelaySeconds: 15
+#      periodSeconds: 5
+# ...
+
+# ================================================================
+# gRPC Liveness Probe
+# ================================================================
+
+# ...
+#    livenessProbe:
+#      grpc:
+#        port: 2379
+#      initialDelaySeconds: 10
+# ...
