@@ -1,0 +1,12 @@
+...
+  containers:
+  - name: myapp-vol-container
+    image: myapp
+    volumeMounts:
+    - name: config-volume
+      mountPath: /etc/config
+  volumes:
+  - name: config-volume
+    configMap:
+      name: vol-config-map
+...
