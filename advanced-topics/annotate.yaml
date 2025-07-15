@@ -1,0 +1,7 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webserver
+  annotations:
+    description: Deployment based PoC dates 2nd Mar'2022
+....
